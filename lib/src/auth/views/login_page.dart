@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login/src/auth/views/forgot_password.dart';
 import 'package:login/src/widgets/custom_button.dart';
 import 'package:login/src/widgets/custom_text_form_field.dart';
 
@@ -51,7 +52,13 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20.0),
-              const Text('Forgot Password?', textAlign: TextAlign.left),
+              GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ForgotPassword()),
+                ),
+                child: Text('Forgot Password?', textAlign: TextAlign.left),
+              ),
               const SizedBox(height: 20.0),
               Padding(
                 padding: const EdgeInsets.all(20.0),
