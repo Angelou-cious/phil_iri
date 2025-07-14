@@ -33,7 +33,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 padding: const EdgeInsets.all(20.0),
                 child: CustomButton(
                   label: 'Go to Login!',
-                  onPressed: () => Navigator.push(
+                  onPressed: () => Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => AuthWidgetTree()),
                   ),
