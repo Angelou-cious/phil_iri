@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login/src/auth/views/forgot_password.dart';
+import 'package:login/src/constants/style_constants.dart';
 import 'package:login/src/widgets/custom_button.dart';
 import 'package:login/src/widgets/custom_text_form_field.dart';
 
@@ -19,9 +20,9 @@ class LoginPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: CustomButton(
-                  label: 'Email',
-                  svg: 'assets/svg/google.svg',
+                  label: 'Gmail',
                   onPressed: () {},
+                  foregroundColor: AppColors.primary,
                 ),
               ),
               const Padding(
@@ -51,29 +52,29 @@ class LoginPage extends StatelessWidget {
                   prefixIcon: Icons.lock,
                 ),
               ),
-              const SizedBox(height: 20.0),
-              GestureDetector(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ForgotPassword()),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppPadding.medium,
                 ),
-                child: Text('Forgot Password?', textAlign: TextAlign.left),
+                child: GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ForgotPassword()),
+                  ),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text('Forgot Password?'),
+                  ),
+                ),
               ),
-              const SizedBox(height: 20.0),
+              const SizedBox(height: 60.0),
               Padding(
                 padding: const EdgeInsets.all(20.0),
-                child: ElevatedButton(
+                child: CustomButton(
+                  label: 'Log In!',
                   onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    backgroundColor: Colors.teal,
-                    surfaceTintColor: Colors.teal,
-                    minimumSize: const Size.fromHeight(60.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                  ),
-                  child: const Text('Log In'),
+                  backgroundColor: AppColors.primary,
+                  foregroundColor: AppColors.secondary,
                 ),
               ),
             ],
